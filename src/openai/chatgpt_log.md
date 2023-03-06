@@ -39,10 +39,9 @@ c
 ```
 I hope this helps! Let me know if you have any further questions.
 
+**aboichev@gmail.com
+Can you rewrite it into a single-line command without assigning intermediate results into variables?**
 
-
-aboichev@gmail.com
-Can you rewrite it into a single-line command without assigning intermediate results into variables?
 Sure! Here's an example of how you can convert the JSON string into a PowerShell object and list the contents of the "b" property in a single command without assigning intermediate results into variables:
 
 ```
@@ -60,8 +59,9 @@ c
 ```
 I hope this helps! Let me know if you have any further questions.
 
-aboichev@gmail.com
-The command you have provided prints the content of the first element '{"c": 3}' but not all the elements of the array. Do you know how to display all the elements?
+**aboichev@gmail.com
+The command you have provided prints the content of the first element '{"c": 3}' but not all the elements of the array. Do you know how to display all the elements?**
+
 You're right, my apologies for the confusion. To display all elements of the "b" array, you can use the ForEach-Object cmdlet to iterate over the array and output each element. Here's an updated one-liner:
 
 ```
@@ -82,8 +82,9 @@ d
 
 I hope this helps! Let me know if you have any further questions.
 
-aboichev@gmail.com
-the output of the command you've provided is exactly the same as before. Do you know why?
+**aboichev@gmail.com
+the output of the command you've provided is exactly the same as before. Do you know why?**
+
 My apologies for the confusion again, I made a mistake in my previous answer. To display all elements of the "b" array, you can use the ForEach-Object cmdlet to iterate over the array and output each element's properties. Here's an updated one-liner:
 
 ```
@@ -100,7 +101,6 @@ This will produce the following output:
 I hope this helps! Let me know if you have any further questions.
 
 
-
 **aboichev@gmail.com
 Thank You. The last command produced the expected result. Can you elaborate on what is PSObject property and when I can use it?**
 
@@ -115,8 +115,6 @@ In the example I provided earlier, we used the PSObject property to access the p
 I hope this helps! Let me know if you have any further questions.
 
 
-
-
 **aboichev@gmail.com
 Can you elaborate on the usage of -ExpandProperty in the previous example versus using -Property parameter for the same purpose?**
 
@@ -129,9 +127,6 @@ The -ExpandProperty parameter is used to output the values of a single property 
 In the example I provided earlier, we used -ExpandProperty to output the values of the "b" property, which contains an array of objects. If we had used -Property instead, PowerShell would have output each object as a separate object with a "b" property. By using -ExpandProperty, we flattened the array and outputted each object's properties as separate objects.
 
 I hope this helps! Let me know if you have any further questions.
-
-
-
 
 **aboichev@gmail.com
 In the 'Languages' example, you have provided if the 'Language' property contains the array, why  do I need to expand this property and not just iterate over the elements of the array using ForEach-Object command?
