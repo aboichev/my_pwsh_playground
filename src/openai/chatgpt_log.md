@@ -52,14 +52,12 @@ In this example, we use a single pipeline command to convert the JSON string int
 
 This will produce the same output as the previous examples:
 
-Output:
-
-diff
-Copy code
+```
 c
 -
 3
 4
+```
 I hope this helps! Let me know if you have any further questions.
 
 aboichev@gmail.com
@@ -88,25 +86,24 @@ aboichev@gmail.com
 the output of the command you've provided is exactly the same as before. Do you know why?
 My apologies for the confusion again, I made a mistake in my previous answer. To display all elements of the "b" array, you can use the ForEach-Object cmdlet to iterate over the array and output each element's properties. Here's an updated one-liner:
 
-css
-Copy code
+```
 '{"a":1,"b":[{"c":3},{"d":4}]}' | ConvertFrom-Json | Select-Object -ExpandProperty b | ForEach-Object { $_.PSObject.Properties.Value }
+```
 In this example, we use a single pipeline command to convert the JSON string into a PowerShell object, select the "b" property, and iterate over its elements using the ForEach-Object cmdlet. The $_ variable represents the current object in the pipeline, and $_.PSObject.Properties.Value outputs the values of each property in the object.
 
 This will produce the following output:
 
-Output:
-
-Copy code
+```
 3
 4
+```
 I hope this helps! Let me know if you have any further questions.
 
 
 
+**aboichev@gmail.com
+Thank You. The last command produced the expected result. Can you elaborate on what is PSObject property and when I can use it?**
 
-aboichev@gmail.com
-Thank You. The last command produced the expected result. Can you elaborate on what is PSObject property and when I can use it?
 Certainly! In PowerShell, every object has a PSObject property, which is an instance of the System.Management.Automation.PSObject class. This property provides a set of methods and properties that you can use to inspect and manipulate the object.
 
 The PSObject property is particularly useful when working with objects that come from external sources, such as the output of a command or data from a file. When PowerShell receives external objects, it wraps them in PSObject instances, which allows you to access additional properties and methods that might not be available in the original object.
@@ -120,8 +117,9 @@ I hope this helps! Let me know if you have any further questions.
 
 
 
-aboichev@gmail.com
-Can you elaborate on the usage of -ExpandProperty in the previous example versus using -Property parameter for the same purpose?
+**aboichev@gmail.com
+Can you elaborate on the usage of -ExpandProperty in the previous example versus using -Property parameter for the same purpose?**
+
 Sure! In PowerShell, the Select-Object cmdlet is used to select and manipulate properties of objects. The Select-Object cmdlet has two parameters that control how properties are output: -Property and -ExpandProperty.
 
 The -Property parameter is used to select one or more properties of an object and output them as separate objects. For example, if you run Get-Process | Select-Object -Property Name, CPU, you will get a table that contains only the Name and CPU properties of each process.
@@ -135,8 +133,9 @@ I hope this helps! Let me know if you have any further questions.
 
 
 
-aboichev@gmail.com
+**aboichev@gmail.com
 In the 'Languages' example, you have provided if the 'Language' property contains the array, why  do I need to expand this property and not just iterate over the elements of the array using ForEach-Object command?
+
 That's a great question! In the example I provided earlier, if you have an object with a Languages property that contains an array of language names, you could certainly use ForEach-Object to iterate over the elements of the array and perform some action on each element.
 
 However, there are a few reasons why you might want to use -ExpandProperty instead of ForEach-Object in this case:
